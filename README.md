@@ -1,71 +1,8 @@
-## Using Knex for migrations
+# Using Knex
 
-### Migrations
+## Part 1: [Migrations](migrations.md)
 
-Have you noticed yet how wonderful Github is? And have you also noticed how difficult it is to track your database in github? Migrations to the rescue! Migrations allow us to create our databases and then track changes to the database structure in our javascript files.
-
-According to [Wikipedia](https://en.wikipedia.org/wiki/Schema_migration), "A schema migration is performed on a database whenever it is necessary to update or revert that database's schema to some newer or older version. Migrations are performed programmatically by using a schema migration tool." A schema indicates which tables or relations make up the database, as well as the fields included on each table.
-
-In order use migrations with Knex, you need to install Knex globally.
-
-```bash
-npm install knex -g
-```
-
-Since this is a global install, you will only need to so once. Like our dear friend, `npm`, you will need to `knex init` to create a `knexfile.js`. The `knexfile` will connect our app to our database and will specify any settings we want to use. The `knexfile` assumes three different environments for your app: testing, development, and production. We will primarily be working with testing and development. Why use a different environment for testing? Well, this way we can have a separate database for testing so that our tests always run the way we expect (i.e., no users enter extra data between the time we write our tests and when we run them).
-
-After that, you can create migrations, run migrations, and rollback migrations.
-
-```bash
-knex migrate:make migration_name
-knex migrate:latest
-knex migrate:rollback
-```
-
-So, what does all that stuff *mean*? 
-
-#### Creating a migration
-
-Unlike other files in your project, knex will create your migration files for  you. Knex is very hepful and creates the migrations file with the name you specify in `knex migration:make migration_name` along with a timestamp. Knex will even go one step farther, and create a `db/migrations` directory for your migration files.
-
-The migration file Knex creates for you includes two empty functions.
-Looks like this:
-
-```js
-exports.up = function(knex, Promise) {
-  
-};
-
-exports.down = function(knex, Promise) {
-  
-};
-```
-Migrations are pretty awesome because they run two ways. Each migration you write should do something (in `exports.up`) that will run when you run your migrations, and also UNDO that same thing (in `exports.down`) that will run when you rollback your migration.
-
-For example, I could create a simple table in my `exports.up` like so:
-```js
-exports.up = function(knex, Promise) {
-  return knex.schema
-    .createTable('monsters', function(table){
-      table.increments('monster_id').primary();
-      table.string('monster_name').notNullable();
-    });
-};
-```
-
-and then my `exports.down` would look like so:
-```js
-exports.down = function(knex, Promise) {
-  return knex.schema
-    .dropTable('monsters')
-};
-```
-
-When I run `knex migrate:latest`, a monsters table is added to my database, and then when I run `knex migrate:rollback`, that table is removed from my database.
-
-By tracking the changes of my migration files in Github, I can keep track of the changes I've made to my database over time.
-
-## Exercise
+### Requirements
 
 Let's create a database, fill it with useful tables, and then knock the whole thing down again.
 
@@ -110,3 +47,17 @@ Try it again. Make another migration to add a second table to your database. How
 ### Bonus
 - [x] Create another migration that adds a new column to your hero table
 - [x] Create yet another migration that adds a weapons table to your database. The weapons should have names and should have a many to many relationship with your heroes.
+
+## Part 2: [Seeding](seeding.md)
+
+Remember that sandcastle database we made in the previous exercise? Go ahead and run those migrations so that our tables exist, and let's seed them with data.
+
+- [ ] Create a seed file for your monsters and add at least three monsters to your database.
+- [ ] Create a new seed file for  your heros and add those guys to the databse.
+- [ ] Confirm your seeded data has made it into the database by checking pgAdmin or psql.
+- [ ] Create a new table called "battles" that includes a unique id, a location, a hero id (foreign key), and a monster id(foreign key). 
+- [ ] Create and run a seed file to seed your new battles table.
+- [ ] Have fun storming the castle.
+
+### Bonus
+- [ ] Seed your weapons table.
