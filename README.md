@@ -109,4 +109,4 @@ Try it again. Make another migration to add a second table to your database. How
 
 ### Bonus
 - [x] Create another migration that adds a new column to your hero table
-- [ ] Create yet another migration that adds a weapons table to your database. The weapons should have names and should have a many to many relationship with your heroes.
+- [x] Create yet another migration that adds a weapons table to your database. The weapons should have names and should have a many to many relationship with your heroes.

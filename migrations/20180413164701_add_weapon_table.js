@@ -1,14 +1,15 @@
 
 exports.up = function(knex, Promise) {
   return knex.schema
-    .createTable('monsters', t => {
+    .createTable('weapons', t => {
       t.increments('id').primary();
       t.string('name').notNullable();
-      t.text('description');
-    })
+      t.integer('owner_id');
+      t.foreign('owner_id').references('id').inTable('heroes');
+    });
 };
 
 exports.down = function(knex, Promise) {
   return knex.schema
-    .dropTable('monsters');
+    .dropTable('weapons');
 };
