@@ -1,0 +1,25 @@
+{
+  "name": "knex",
+  "version": "1.0.0",
+  "description": "### Migrations",
+  "main": "knexfile.js",
+  "dependencies": {
+    "knex": "^0.14.6",
+    "pg": "^7.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenziebottoms/nss-back-02-knex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kenziebottoms/nss-back-02-knex/issues"
+  },
+  "homepage": "https://github.com/kenziebottoms/nss-back-02-knex#readme"
+}
