@@ -103,10 +103,10 @@ All done!
 
 Just kidding... 
 
-Try it again. Make another migration to add a second table to your database. How about some heroes to fight off those monsters? Run knex migrate:latest and knex migrate:rollback a couple of time to see how the two different migration intereact with each other and the databse.
+Try it again. Make another migration to add a second table to your database. How about some heroes to fight off those monsters? Run `knex migrate:latest` and `knex migrate:rollback` a couple of time to see how the two different migration intereact with each other and the databse.
 
 ***Important:*** whenever you make a change to your database, you can `migrate:latest`, you can `migrate:rollback`, or you can `migrate:make new_migration`. Do not change a migration file that has already been made, or you will be sad 😢.
 
 ### Bonus
-- [ ] Create another migration that adds a new column to your hero table
+- [x] Create another migration that adds a new column to your hero table
 - [ ] Create yet another migration that adds a weapons table to your database. The weapons should have names and should have a many to many relationship with your heroes.
