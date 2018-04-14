@@ -57,7 +57,7 @@ Remember that sandcastle database we made in the previous exercise? Go ahead and
 - [x] Confirm your seeded data has made it into the database by checking pgAdmin or psql.
 - [x] Create a new table called "battles" that includes a unique id, a location, a hero id (foreign key), and a monster id (foreign key). 
 - [x] Create and run a seed file to seed your new battles table.
-- [ ] Have fun storming the castle.
+- [x] Have fun storming the castle.
 
 ### Bonus
-- [ ] Seed your weapons table.
+- [x] Seed your weapons table.
