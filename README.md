@@ -55,8 +55,8 @@ Remember that sandcastle database we made in the previous exercise? Go ahead and
 - [x] Create a seed file for your monsters and add at least three monsters to your database.
 - [x] Create a new seed file for  your heros and add those guys to the databse.
 - [x] Confirm your seeded data has made it into the database by checking pgAdmin or psql.
-- [ ] Create a new table called "battles" that includes a unique id, a location, a hero id (foreign key), and a monster id(foreign key). 
-- [ ] Create and run a seed file to seed your new battles table.
+- [x] Create a new table called "battles" that includes a unique id, a location, a hero id (foreign key), and a monster id (foreign key). 
+- [x] Create and run a seed file to seed your new battles table.
 - [ ] Have fun storming the castle.
 
 ### Bonus
