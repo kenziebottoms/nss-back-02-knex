@@ -52,9 +52,9 @@ Try it again. Make another migration to add a second table to your database. How
 
 Remember that sandcastle database we made in the previous exercise? Go ahead and run those migrations so that our tables exist, and let's seed them with data.
 
-- [ ] Create a seed file for your monsters and add at least three monsters to your database.
+- [x] Create a seed file for your monsters and add at least three monsters to your database.
 - [x] Create a new seed file for  your heros and add those guys to the databse.
-- [ ] Confirm your seeded data has made it into the database by checking pgAdmin or psql.
+- [x] Confirm your seeded data has made it into the database by checking pgAdmin or psql.
 - [ ] Create a new table called "battles" that includes a unique id, a location, a hero id (foreign key), and a monster id(foreign key). 
 - [ ] Create and run a seed file to seed your new battles table.
 - [ ] Have fun storming the castle.
